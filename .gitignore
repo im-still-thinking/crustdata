@@ -3,3 +3,4 @@ venv
 secrets.toml
 .DS_Store
 .devcontainer
+__pycache__
