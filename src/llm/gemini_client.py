@@ -2,11 +2,11 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferWindowMemory
 from typing import List, Dict
-from ..lib.doc_manager import EnhancedDocManager
+from ..lib.doc_manager import StructuredDocManager
 
 class GeminiClient:
     def __init__(self, api_key: str, api_docs: str):
-        self.doc_manager = EnhancedDocManager(api_docs, api_key)
+        self.doc_manager = StructuredDocManager(api_docs, api_key)
         
         self.llm = ChatGoogleGenerativeAI(
             model="gemini-pro",
