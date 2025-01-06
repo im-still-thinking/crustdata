@@ -4,6 +4,10 @@ from src.ui.chat_interface import ChatInterface
 from src.config.settings import GEMINI_API_KEY, API_DOCS
 
 def main():
+
+    if "cache_dir" not in st.session_state:
+        st.session_state.cache_dir = ".cache"
+    
     gemini_client = GeminiClient(GEMINI_API_KEY, API_DOCS)
     chat_interface = ChatInterface(gemini_client)
     chat_interface.render()
